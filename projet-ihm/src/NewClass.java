@@ -6,7 +6,7 @@
 
 /**
  *
- * @author Marvin-Fixe
+ * @author Marvin
  */
 public class NewClass {
 
