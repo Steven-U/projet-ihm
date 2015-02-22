@@ -9,5 +9,5 @@
  * @author Marvin
  */
 public class NewClass {
-qsdfsdqf
+
 }
