@@ -27,46 +27,46 @@ import java.util.Objects;
 
 public class Planning implements Serializable {
 
-    private Map<Plage, List<Salle>> planning;
+    private Map<Module, List<Salle>> planning;
 
     public Planning() {
-        this.planning = new HashMap<Plage, List<Salle>>();
+        this.planning = new HashMap<Module, List<Salle>>();
     }
 
-    protected Map<Plage, List<Salle>> getPlanning() {
+    protected Map<Module, List<Salle>> getPlanning() {
         return this.planning;
     }
 
-    public void ajouterPlage(Plage p) throws Exception {
-        if (this.planning.containsKey(p)) {
+    public void ajouterPlage(Module m) throws Exception {
+        if (this.planning.containsKey(m)) {
             throw new Exception("Cette plage existe déjà !");
         } else {
-            this.planning.put(p, new ArrayList<Salle>());
+            this.planning.put(m, new ArrayList<Salle>());
         }
     }
 
-    public void ajouterSalle(Plage p, Salle s) throws Exception {
-        if (!this.planning.containsKey(p)) {
+    public void ajouterSalle(Module m, Salle s) throws Exception {
+        if (!this.planning.containsKey(m)) {
             throw new Exception("Cette plage n'existe pas !");
-        } else if(this.planning.get(p).contains(s)) {
+        } else if(this.planning.get(m).contains(s)) {
             throw new Exception("Cette salle est déjà réservée !");
         } else {
-            for (Salle s1 : this.planning.get(p)) {
+            for (Salle s1 : this.planning.get(m)) {
                 if (s1.getProf().equals(s.getProf())) {
                     throw new Exception("Ce prof a déjà un cours de prévu !");
                 }
             }
-            List<Salle> l = this.planning.get(p);
+            List<Salle> l = this.planning.get(m);
             l.add(s);
-            this.planning.put(p, l);
+            this.planning.put(m, l);
         }
     }
 
-    public List<Salle> recupererSalles(Plage p) throws Exception {
-        if (this.planning.containsKey(p)) {
+    public List<Salle> recupererSalles(Module m) throws Exception {
+        if (this.planning.containsKey(m)) {
             throw new Exception("Cette plage existe déjà !");
         }
-        return this.planning.get(p);
+        return this.planning.get(m);
     }
 
     @Override
