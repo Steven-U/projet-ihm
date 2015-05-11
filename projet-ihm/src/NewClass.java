@@ -7,8 +7,8 @@
 /**
  *
  * @author Marvin
- * test commit
- * test 2
+ * 
+ * 
  */
 public class NewClass {
 
