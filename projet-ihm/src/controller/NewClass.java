@@ -8,9 +8,7 @@ package controller;
 
 /**
  *
- * @author Marvin
- * steven test 
- * 
+ * @author Marvin * 
  */
 public class NewClass {
 
