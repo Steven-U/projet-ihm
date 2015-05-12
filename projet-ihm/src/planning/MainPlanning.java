@@ -15,7 +15,7 @@ public class MainPlanning {
         //Création des objets
         Planning p = new Planning();
         Planning p1 = new Planning();
-        Plage plage = new Plage("11/02/2015", "14:40");
+        Module module = new Module("module1","m1","blue",3,2);
         Salle s = new Salle(new Prof("Ung", "Steven"), "A13");
         Salle s1 = new Salle(new Prof("Mirtil", "Marvin"), "A14");
         Salle s2 = new Salle(new Prof("Bilgen", "Tugay"), "A14");
@@ -23,27 +23,27 @@ public class MainPlanning {
         
         //Imbrication des objets les uns dans les autres
         try {
-            p.ajouterPlage(plage);
+            p.ajouterModule(module);
         } catch (Exception ex) {
             System.out.println(ex);
         }
         try {
-            p.ajouterSalle(plage, s);
+            p.ajouterSalle(module, s);
         } catch (Exception ex) {
             System.out.println(ex);
         }
         try {
-            p.ajouterSalle(plage, s1);
+            p.ajouterSalle(module, s1);
         } catch (Exception ex) {
             System.out.println(ex);
         }
         try {
-            p.ajouterSalle(plage, s2);
+            p.ajouterSalle(module, s2);
         } catch (Exception ex) {
             System.out.println(ex);
         }
         try {
-            p.ajouterSalle(plage, s3);
+            p.ajouterSalle(module, s3);
         } catch (Exception ex) {
             System.out.println(ex);
         }
@@ -52,13 +52,13 @@ public class MainPlanning {
 
         //Enregistrement et ouverture d'un planning
         try {
-            p.enregistrer("planning.ser");
+            p.enregistrer("planning.dat");
         } catch (IOException ex) {
             Logger.getLogger(MainPlanning.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         try {
-            p1.ouvrir("planning.ser");
+            p1.ouvrir("planning.dat");
         } catch (IOException | ClassNotFoundException ex) {
             Logger.getLogger(MainPlanning.class.getName()).log(Level.SEVERE, null, ex);
         }
