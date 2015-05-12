@@ -9,7 +9,7 @@ package controller;
 /**
  *
  * @author Marvin
- * steven test https://github.com/L3-A/planning/tree/master/planning/src/
+ * steven test 
  * 
  */
 public class NewClass {
