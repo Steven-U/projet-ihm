@@ -24,6 +24,7 @@ public class NewJFrame extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         
+        
     }
 
     /**
