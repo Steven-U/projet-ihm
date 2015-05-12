@@ -73,7 +73,7 @@ public class Planning implements Serializable {
     public String toString() {
         return "Planning{" + "planning=" + planning + '}';
     }
-
+    //fonction pour enregistrer un planning
     public void enregistrer(String nomFichier) throws IOException {
         OutputStream buffer;
         ObjectOutput output;
@@ -85,7 +85,8 @@ public class Planning implements Serializable {
             output.close();
         }
     }
-
+    
+    //fonction pour ouvrir un planning
     public void ouvrir(String nomFichier) throws FileNotFoundException, IOException, ClassNotFoundException {
         InputStream file = new FileInputStream(nomFichier);
         InputStream buffer = new BufferedInputStream(file);
@@ -116,5 +117,7 @@ public class Planning implements Serializable {
         }
         return true;
     }
+    
+    
 
 }
