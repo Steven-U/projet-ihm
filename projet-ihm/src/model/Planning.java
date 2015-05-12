@@ -37,9 +37,9 @@ public class Planning implements Serializable {
         return this.planning;
     }
 
-    public void ajouterPlage(Module m) throws Exception {
+    public void ajouterModule(Module m) throws Exception {
         if (this.planning.containsKey(m)) {
-            throw new Exception("Cette plage existe déjà !");
+            throw new Exception("Ce module existe déjà !");
         } else {
             this.planning.put(m, new ArrayList<Salle>());
         }
@@ -47,7 +47,7 @@ public class Planning implements Serializable {
 
     public void ajouterSalle(Module m, Salle s) throws Exception {
         if (!this.planning.containsKey(m)) {
-            throw new Exception("Cette plage n'existe pas !");
+            throw new Exception("Ce module n'existe pas !");
         } else if(this.planning.get(m).contains(s)) {
             throw new Exception("Cette salle est déjà réservée !");
         } else {
@@ -64,7 +64,7 @@ public class Planning implements Serializable {
 
     public List<Salle> recupererSalles(Module m) throws Exception {
         if (this.planning.containsKey(m)) {
-            throw new Exception("Cette plage existe déjà !");
+            throw new Exception("Ce module existe déjà !");
         }
         return this.planning.get(m);
     }
