@@ -169,6 +169,16 @@ public class NewJFrame extends javax.swing.JFrame {
         jMenu1.add(sauve);
 
         quitter.setText("Quitter");
+        quitter.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                quitterMouseClicked(evt);
+            }
+        });
+        quitter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quitterActionPerformed(evt);
+            }
+        });
         jMenu1.add(quitter);
 
         jMenuBar1.add(jMenu1);
@@ -218,6 +228,15 @@ public class NewJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_semaineActionPerformed
 
+    private void quitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitterActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_quitterActionPerformed
+
+    private void quitterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quitterMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_quitterMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -234,19 +253,16 @@ public class NewJFrame extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new NewJFrame().setVisible(true);
                 
