@@ -6,16 +6,16 @@ import java.util.Objects;
 
 public class Salle implements Serializable {
 
-    private Prof prof;
+    private Formateur formateur;
     private String numeroSalle;
 
-    public Salle(Prof prof, String numeroSalle) {
-        this.prof = prof;
+    public Salle(Formateur formateur, String numeroSalle) {
+        this.formateur = formateur;
         this.numeroSalle = numeroSalle;
     }
 
-    public Prof getProf() {
-        return prof;
+    public Formateur getFormateur() {
+        return formateur;
     }
 
     public String getNumeroSalle() {
@@ -47,7 +47,7 @@ public class Salle implements Serializable {
 
     @Override
     public String toString() {
-        return "Salle{" + "prof=" + prof + ", numeroSalle=" + numeroSalle + '}';
+        return "Salle{" + "formateur=" + formateur + ", numeroSalle=" + numeroSalle + '}';
     }
 
 }

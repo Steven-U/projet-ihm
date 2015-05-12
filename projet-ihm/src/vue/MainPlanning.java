@@ -15,10 +15,10 @@ public class MainPlanning {
         Planning p = new Planning();
         Planning p1 = new Planning();
         Module module = new Module("module1","m1","blue",3,2);
-        Salle s = new Salle(new Prof("Ung", "Steven"), "A13");
-        Salle s1 = new Salle(new Prof("Mirtil", "Marvin"), "A14");
-        Salle s2 = new Salle(new Prof("Bilgen", "Tugay"), "A14");
-        Salle s3 = new Salle(new Prof("Patrick", "Sébastien"), "A15");
+        Salle s = new Salle(new Formateur("Ung", "Steven"), "A13");
+        Salle s1 = new Salle(new Formateur("Mirtil", "Marvin"), "A14");
+        Salle s2 = new Salle(new Formateur("Bilgen", "Tugay"), "A14");
+        Salle s3 = new Salle(new Formateur("Patrick", "Sébastien"), "A15");
         
         //Imbrication des objets les uns dans les autres
         try {

@@ -52,7 +52,7 @@ public class Planning implements Serializable {
             throw new Exception("Cette salle est déjà réservée !");
         } else {
             for (Salle s1 : this.planning.get(m)) {
-                if (s1.getProf().equals(s.getProf())) {
+                if (s1.getFormateur().equals(s.getFormateur())) {
                     throw new Exception("Ce prof a déjà un cours de prévu !");
                 }
             }
