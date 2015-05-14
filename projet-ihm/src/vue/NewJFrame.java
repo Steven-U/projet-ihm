@@ -74,6 +74,20 @@ public class NewJFrame extends javax.swing.JFrame {
         planning.setColumnSelectionAllowed(true);
         planning.setRowHeight(160);
         planning.getTableHeader().setReorderingAllowed(false);
+        planning.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                planningMouseClicked(evt);
+            }
+        });
+        planning.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                planningAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
         jScrollPane1.setViewportView(planning);
         if (planning.getColumnModel().getColumnCount() > 0) {
             planning.getColumnModel().getColumn(0).setResizable(false);
@@ -123,6 +137,11 @@ public class NewJFrame extends javax.swing.JFrame {
         );
 
         valider.setText("Valider");
+        valider.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                validerActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelGestionLayout = new javax.swing.GroupLayout(panelGestion);
         panelGestion.setLayout(panelGestionLayout);
@@ -232,6 +251,18 @@ public class NewJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_quitterMouseClicked
 
+    private void planningMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_planningMouseClicked
+        InterSeance inter = new InterSeance();
+    }//GEN-LAST:event_planningMouseClicked
+
+    private void planningAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_planningAncestorAdded
+        
+    }//GEN-LAST:event_planningAncestorAdded
+
+    private void validerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validerActionPerformed
+        
+    }//GEN-LAST:event_validerActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -260,6 +291,7 @@ public class NewJFrame extends javax.swing.JFrame {
             @Override
             public void run() {
                 new NewJFrame().setVisible(true);
+                
                 
             }
         });
